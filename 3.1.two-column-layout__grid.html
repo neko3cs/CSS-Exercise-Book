@@ -7,12 +7,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>2カラムレイアウト - Grid - </title>
     <style>
-        
+        .layout-two-column {
+            display: grid;
+            /* 3:1の2カラムを作る（fr: fraction） */
+            grid-template-columns: 3fr 1fr;
+            /* minmax(min, max): 最小と最大を設定 */
+            grid-template-rows: 44px minmax(300px, 1fr) 44px;
+            /* row方向に対しての幅設定（ヘッダーとメインコンテンツの間、フッターとメインコンテンツの間） */
+            grid-row-gap: 30px;
+        }
+
+        .layout-two-column__header {
+            /* グリッドの配置位置指定（column方向に対して1番目から3番目を指定） */
+            /* 番号の基準は"線"（3fr 1frで2つに分けたら線は3つ） */
+            grid-column: 1 / 3;
+            display: flex;
+            align-items: flex;
+            padding: 0 15px;
+            border-bottom: 1px solid black;
+        }
+
+        .layout-two-column__main {
+            padding: 0 15px;
+        }
+
+        .layout-two-column__side {
+            padding: 0 15px;
+            border-left: 1px solid black;
+        }
+
+        .layout-two-column__footer {
+            grid-column: 1 / 3;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            border-top: 1px solid black;
+        }
     </style>
 </head>
 
 <body>
-    
+    <div class="layout-two-column">
+        <header class="layout-two-column__header">ヘッダー</header>
+        <div class="layout-two-column__main">メインコンテンツ</div>
+        <aside class="layout-two-column__side">サイドバー</aside>
+        <footer class="layout-two-column__footer">フッター</footer>
+    </div>
 </body>
 
 </html>
