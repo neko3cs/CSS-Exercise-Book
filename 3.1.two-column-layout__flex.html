@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2カラムレイアウト - Flex - </title>
+    <style>
+        .layout-two-column__header {
+            display: flex;
+            align-items: center;
+            height: 44px;
+            padding: 0 15px;
+            border-bottom: 1px solid black;
+        }
+
+        .layout-two-column__content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            min-height: 300px;
+            padding: 30px 0;
+        }
+
+        .layout-two-column__main {
+            width: 75%;
+            padding: 0 15px;
+        }
+
+        .layout-two-column__side {
+            width: calc(25% - 30px);
+            padding: 0 15px;
+            border-left: 1px solid black;
+        }
+
+        .layout-two-column__footer {
+            display: flex;
+            align-items: center;
+            height: 44px;
+            padding: 0 15px;
+            border-top: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header class="layout-two-column__header">ヘッダー</header>
+        <div class="layout-two-column__content">
+            <div class="layout-two-column__main">メインコンテンツ</div>
+            <aside class="layout-two-column__side">サイドバー</aside>
+        </div>
+        <footer class="layout-two-column__footer">フッター</footer>
+    </div>
+</body>
+
+</html>
