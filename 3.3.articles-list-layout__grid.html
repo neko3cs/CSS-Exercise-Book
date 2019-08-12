@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>記事一覧レイアウト - グリッド型 - </title>
+    <style>
+        .layout-articles-grid {
+            display: grid;
+            /* 複数のカラムを書く場合はrepeat(length, width)を使うと便利 */
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 30px;
+            padding: 30px 15px;
+        }
+
+        .layout-articles-grid-articles {
+            display: grid;
+            grid-template-rows: 120px 1fr;
+        }
+
+        .layout-articles-grid-articles__link {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .layout-articles-grid-articles__link:hover {
+            opacity: 0.6;
+        }
+
+        .layout-articles-grid-articles__thumb {
+            width: 100%;
+            height: 120px;
+            border-radius: 3px;
+        }
+
+        .layout-articles-grid-articles__title {
+            padding: 8px 0;
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
+        .layout-articles-grid-articles__meta {
+            align-self: flex-end;
+            padding: 8px 0;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout-articles-grid">
+        <a href="" class="layout-articles-grid-articles__link">
+            <article class="layout-articles-grid-articles">
+                <img src="http://placekitten.com/120/120" class="layout-articles-grid-articles__thumb">
+                <h3 class="layout-articles-grid-articles__title">
+                    朝はCSSに生き、昼はCSSに生き、夜はCSSに眠る。
+                </h3>
+                <div class="layout-articles-grid-articles__meta">
+                    <span>2019/1/18</span>
+                    <span>|</span>
+                    <span>CSSおじさん</span>
+                </div>
+            </article>
+        </a>
+
+        <a href="" class="layout-articles-grid-articles__link">
+            <article class="layout-articles-grid-articles">
+                <img src="http://placekitten.com/240/120" class="layout-articles-grid-articles__thumb">
+                <h3 class="layout-articles-grid-articles__title">
+                    まだCSSで消耗してるの？
+                </h3>
+                <div class="layout-articles-grid-articles__meta">
+                    <span>2019/1/17</span>
+                    <span>|</span>
+                    <span>CSSおじさん</span>
+                </div>
+            </article>
+        </a>
+
+        <a href="" class="layout-articles-grid-articles__link">
+            <article class="layout-articles-grid-articles">
+                <img src="http://placekitten.com/120/120" class="layout-articles-grid-articles__thumb">
+                <h3 class="layout-articles-grid-articles__title">
+                    CSSでこんな間違いをしていませんか？
+                </h3>
+                <div class="layout-articles-grid-articles__meta">
+                    <span>2019/1/16</span>
+                    <span>|</span>
+                    <span>CSSおじさん</span>
+                </div>
+            </article>
+        </a>
+
+        <a href="" class="layout-articles-grid-articles__link">
+            <article class="layout-articles-grid-articles">
+                <img src="http://placekitten.com/240/120" class="layout-articles-grid-articles__thumb">
+                <h3 class="layout-articles-grid-articles__title">
+                    CSSを知らなかったら人生の半分は無駄にしていた。
+                </h3>
+                <div class="layout-articles-grid-articles__meta">
+                    <span>2019/1/15</span>
+                    <span>|</span>
+                    <span>CSSおじさん</span>
+                </div>
+            </article>
+        </a>
+
+        <a href="" class="layout-articles-grid-articles__link">
+            <article class="layout-articles-grid-articles">
+                <img src="http://placekitten.com/120/120" class="layout-articles-grid-articles__thumb">
+                <h3 class="layout-articles-grid-articles__title">
+                    CSSを3週間続けた結果...
+                </h3>
+                <div class="layout-articles-grid-articles__meta">
+                    <span>2019/1/14</span>
+                    <span>|</span>
+                    <span>CSSおじさん</span>
+                </div>
+            </article>
+        </a>
+
+        <a href="" class="layout-articles-grid-articles__link">
+            <article class="layout-articles-grid-articles">
+                <img src="http://placekitten.com/240/120" class="layout-articles-grid-articles__thumb">
+                <h3 class="layout-articles-grid-articles__title">
+                    良いCSSと悪いCSSと普通のCSSについて
+                </h3>
+                <div class="layout-articles-grid-articles__meta">
+                    <span>2019/1/14</span>
+                    <span>|</span>
+                    <span>CSSおじさん</span>
+                </div>
+            </article>
+        </a>
+
+        <a href="" class="layout-articles-grid-articles__link">
+            <article class="layout-articles-grid-articles">
+                <img src="http://placekitten.com/120/120" class="layout-articles-grid-articles__thumb">
+                <h3 class="layout-articles-grid-articles__title">
+                    知らないと損するCSSの効果的な使い方
+                </h3>
+                <div class="layout-articles-grid-articles__meta">
+                    <span>2019/1/13</span>
+                    <span>|</span>
+                    <span>CSSおじさん</span>
+                </div>
+            </article>
+        </a>
+
+        <a href="" class="layout-articles-grid-articles__link">
+            <article class="layout-articles-grid-articles">
+                <img src="http://placekitten.com/240/120" class="layout-articles-grid-articles__thumb">
+                <h3 class="layout-articles-grid-articles__title">
+                    CSSについてみんなが知りたいこと
+                </h3>
+                <div class="layout-articles-grid-articles__meta">
+                    <span>2019/1/12</span>
+                    <span>|</span>
+                    <span>CSSおじさん</span>
+                </div>
+            </article>
+        </a>
+    </div>
+</body>
+
+</html>
