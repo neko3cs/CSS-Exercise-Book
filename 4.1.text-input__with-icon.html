@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>アイコン付きのテキスト入力</title>
+    <!-- ↓: 虫眼鏡アイコンを表示するためのCDN（fa fa-searchがそれ） -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <style>
+        .form__item {
+            padding: 15px 0;
+        }
+
+        .form__input-wrap {
+            position: relative;
+            display: inline-block;
+            border: 1px solid black;
+        }
+
+        .form__input-label {
+            position: absolute;
+            /* input要素と横並びにするためのdisplay: flex; */
+            display: flex;
+            /* 子要素を真ん中に持ってくる */
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            /* 子要素のアイコンを中央揃えにするために高さは100%にする */
+            height: 100%;
+        }
+
+        .form__input {
+            /* appearance: none;でブラウザごとのデフォルトスタイルを解除する */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            height: 44px;
+            padding: 0 8px 0 32px;
+            background-color: white;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form__item">
+        <div class="form__input-wrap">
+            <label for="input" class="form__input-label">
+                <i class="fa fa-search"></i>
+            </label>
+            <input id="input" name="input" class="form__input" type="search" placeholder="text input">
+        </div>
+    </div>
+</body>
+
+</html>
