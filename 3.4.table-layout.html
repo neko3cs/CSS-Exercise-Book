@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>テーブルレイアウト</title>
+    <style>
+        .layout-table {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 2fr;
+            margin: 30px 0;
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+        }
+
+        /* テーブルの子要素すべてに対して適応 */
+        .layout-table>* {
+            display: flex;
+            align-items: center;
+            padding: 12px 8px;
+            font-size: 14px;
+            line-height: 1.5;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+        }
+
+        .layout-table>:nth-child(odd) {
+            background-color: #efefef;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout-table">
+        <div>タイトル</div>
+        <div>CSS 練習本（仮）</div>
+
+        <div>サークル名</div>
+        <div>CSSおじさん</div>
+
+        <div>技術書典参加回数</div>
+        <div>2</div>
+
+        <div>頒布数</div>
+        <div>400（予定）</div>
+
+        <div>価格</div>
+        <div>1000円</div>
+
+        <div>ページ数</div>
+        <div>40（予定）</div>
+    </div>
+</body>
+
+</html>
