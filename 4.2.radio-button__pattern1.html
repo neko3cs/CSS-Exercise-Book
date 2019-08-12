@@ -44,7 +44,8 @@
         .form__radio:checked+.form__radio-label::after {
             position: absolute;
             /* (外側の円の(高さ|幅)) - (内側の円の(高さ|幅)) / 2 */
-            top: 4px;
+            /* ...のはずだけどなぜかずれるのでとりあえず+3pxしてる() */
+            top: 7px;
             left: 4px;
             display: block;
             width: 8px;
