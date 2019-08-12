@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>アイテムレイアウト - リスト - </title>
+    <style>
+        .layout-items-tag {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 0;
+            margin: 30px 0;
+            list-style: none;
+        }
+
+        .layout-items-tag>* {
+            /* '#'と文字列を横並びにするためにdisplay: flex;を指定 */
+            display: flex;
+            justify-content: flex-start;
+            padding: 5px 8px;
+            margin: 5px 15px 5px 0;
+            border: 1px solid #999;
+            border-radius: 3px;
+        }
+
+        /* 指定の要素の前側に擬似要素を追加 */
+        /* アイテムにアイコンとかつけたい時に有効 */
+        .layout-items-tag>*::before {
+            display: block;
+            /* content: ''で擬似要素の値を指定 */
+            content: '#';
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="layout-items-tag">
+        <li>北海道</li>
+        <li>青森県</li>
+        <li>岩手県</li>
+        <li>宮城県</li>
+        <li>秋田県</li>
+        <li>山形県</li>
+        <li>福島県</li>
+        <li>茨城県</li>
+        <li>栃木県</li>
+        <li>群馬県</li>
+        <li>埼玉県</li>
+        <li>千葉県</li>
+        <li>東京都</li>
+        <li>神奈川県</li>
+        <li>新潟県</li>
+        <li>富山県</li>
+        <li>石川県</li>
+        <li>福井県</li>
+        <li>山梨県</li>
+        <li>長野県</li>
+        <li>岐阜県</li>
+        <li>静岡県</li>
+        <li>愛知県</li>
+        <li>三重県</li>
+        <li>滋賀県</li>
+        <li>京都府</li>
+        <li>大阪府</li>
+        <li>兵庫県</li>
+        <li>奈良県</li>
+        <li>和歌山県</li>
+        <li>鳥取県</li>
+        <li>島根県</li>
+        <li>岡山県</li>
+        <li>広島県</li>
+        <li>山口県</li>
+        <li>徳島県</li>
+        <li>香川県</li>
+        <li>愛媛県</li>
+        <li>高知県</li>
+        <li>福岡県</li>
+        <li>佐賀県</li>
+        <li>長崎県</li>
+        <li>熊本県</li>
+        <li>大分県</li>
+        <li>宮崎県</li>
+        <li>鹿児島県</li>
+        <li>沖縄県</li>
+    </ul>
+</body>
+
+</html>
