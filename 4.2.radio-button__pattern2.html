@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ラジオボタン - ボタン全体のスタイル - </title>
+    <style>
+        .form__item {
+            padding: 15px 0;
+        }
+
+        .form__hidden {
+            width: 1px;
+            height: 1px;
+            clip: rect(1px, 1px, 1px, 1px);
+            overflow: hidden;
+            position: absolute !important;
+            word-wrap: normal !important;
+        }
+
+        .form__switch-wrap {
+            /* inline-flexで2つのラジオボタンを横並びにくっつけてる */
+            display: inline-flex;
+            justify-content: flex-start;
+        }
+
+        .form__switch-label {
+            padding: 8px;
+            border: 1px solid black;
+        }
+
+        .form__switch-label:last-child {
+            border-left: 0;
+        }
+
+        .form__switch:checked+.form__switch-label {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form__item form__switch-wrap">
+        <input id="switch-1" name="switch" type="radio" value="1" checked class="form__switch form__hidden">
+        <label for="switch-1" class="form__switch-label">value 1</label>
+        <input id="switch-2" name="switch" type="radio" value="2" class="form__switch form__hidden">
+        <label for="switch-2" class="form__switch-label">value 2</label>
+    </div>
+</body>
+
+</html>
