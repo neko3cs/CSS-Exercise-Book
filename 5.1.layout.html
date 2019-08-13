@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>レイアウト</title>
+    <style>
+        .advanced-header {
+            padding: 20px 15px;
+            box-shadow: 0 0 36px rgb(0, 0, 0, 0.1);
+        }
+
+        .advanced-header__title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .advanced-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 10px 0 0;
+            margin: 0;
+            font-size: 14px;
+            text-decoration: underline;
+            list-style: none;
+        }
+
+        .advanced-list>* {
+            margin: 0 15px 0 0;
+        }
+
+        .advanced-main {
+            padding: 20px 15px;
+        }
+
+        .advanced-main__heading {
+            padding: 0 0 5px;
+            margin: 0 0 20px;
+            font-size: 22px;
+            border-bottom: 1px solid black;
+        }
+
+        .advanced-main__articles {
+            display: grid;
+            grid-gap: 20px;
+        }
+
+        .advanced-article__link {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .advanced-article__link:hover {
+            opacity: 0.6;
+        }
+
+        .advanced-article__thumb {
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        .advanced-article__title {
+            padding: 8px 0;
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
+        .advanced-article__meta {
+            align-self: flex-end;
+            padding: 8px 0;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .advanced-side {
+            padding: 20px 15px;
+        }
+
+        .advanced-side__section+.advanced-side__section {
+            padding: 30px 0 0;
+        }
+
+        .advanced-side__heading {
+            padding: 0 0 5px;
+            margin: 0 0 20px;
+            font-size: 22px;
+            border-bottom: 1px solid black;
+        }
+
+        .advanced-side__articles {
+            display: grid;
+            grid-gap: 15px;
+        }
+
+        .advanced-side-article {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            grid-column-gap: 15px;
+        }
+
+        .advanced-side-article__link {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .advanced-side-article__link:hover {
+            opacity: 0.6;
+        }
+
+        .advanced-side-article__thumb {
+            grid-row: 1 / 3;
+            width: 80px;
+            height: 80px;
+            border-radius: 3px;
+            object-fit: cover;
+        }
+
+        .advanced-side-article__title {
+            padding: 8px 0;
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .advanced-side-article__meta {
+            align-self: flex-end;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .advanced-tag {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .advanced-tag>* {
+            display: flex;
+            justify-content: flex-start;
+            padding: 5px 8px;
+            margin: 5px 15px 5px 0;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+
+        .advanced-tag>*::before {
+            display: block;
+            content: '#';
+        }
+
+        .advanced-footer {
+            padding: 20px 15px;
+            background-color: #efefef;
+        }
+
+        .advanced-footer__copyright {
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="advanced">
+        <header class="advanced-header">
+            <div class="advanced-header__title">
+                CSS実践問題集
+            </div>
+            <nav class="advance-header__navigation">
+                <ul class="advanced-list">
+                    <li>このサイトについて</li>
+                    <li>お問い合わせ</li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="advanced-main">
+            <h2 class="advanced-main__heading">新着記事一覧</h2>
+            <div class="advanced-main__articles">
+                <a href="" class="advanced-article__link">
+                    <article class="advanced-article">
+                        <img src="http://placekitten.com/240/120" class="advanced-article__thumb">
+                        <h3 class="advanced-article__title">
+                            朝はCSSに生き、昼はCSSに生き、夜はCSSに眠る。
+                        </h3>
+                        <div class="advanced-article__meta">
+                            <span>2019/1/18</span>
+                            <span>|</span>
+                            <span>CSSおじさん</span>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="" class="advanced-article__link">
+                    <article class="advanced-article">
+                        <img src="http://placekitten.com/200/286" class="advanced-article__thumb">
+                        <h3 class="advanced-article__title">
+                            まだCSSで消耗してるの？
+                        </h3>
+                        <div class="advanced-article__meta">
+                            <span>2019/1/17</span>
+                            <span>|</span>
+                            <span>CSSおじさん</span>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="" class="advanced-article__link">
+                    <article class="advanced-article">
+                        <img src="http://placekitten.com/200/138" class="advanced-article__thumb">
+                        <h3 class="advanced-article__title">
+                            CSSでこんな間違いをしていませんか？
+                        </h3>
+                        <div class="advanced-article__meta">
+                            <span>2019/1/16</span>
+                            <span>|</span>
+                            <span>CSSおじさん</span>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="" class="advanced-article__link">
+                    <article class="advanced-article">
+                        <img src="http://placekitten.com/200/287" class="advanced-article__thumb">
+                        <h3 class="advanced-article__title">
+                            CSSを知らなかったら人生の半分は無駄にしていた。
+                        </h3>
+                        <div class="advanced-article__meta">
+                            <span>2019/1/15</span>
+                            <span>|</span>
+                            <span>CSSおじさん</span>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="" class="advanced-article__link">
+                    <article class="advanced-article">
+                        <img src="http://placekitten.com/96/140" class="advanced-article__thumb">
+                        <h3 class="advanced-article__title">
+                            CSSを3週間続けた結果...
+                        </h3>
+                        <div class="advanced-article__meta">
+                            <span>2019/1/14</span>
+                            <span>|</span>
+                            <span>CSSおじさん</span>
+                        </div>
+                    </article>
+                </a>
+
+                <a href="" class="advanced-article__link">
+                    <article class="advanced-article">
+                        <img src="http://placekitten.com/200/139" class="advanced-article__thumb">
+                        <h3 class="advanced-article__title">
+                            良いCSSと悪いCSSと普通のCSSについて
+                        </h3>
+                        <div class="advanced-article__meta">
+                            <span>2019/1/14</span>
+                            <span>|</span>
+                            <span>CSSおじさん</span>
+                        </div>
+                    </article>
+                </a>
+            </div>
+        </div>
+
+        <aside class="advanced-side">
+            <div class="advanced-side__section">
+                <h3 class="advanced-side__heading">人気の記事</h3>
+                <div class="advanced-side__articles">
+                    <a href="" class="advanced-side-article__link">
+                        <article class="advanced-side-article">
+                            <img src="http://placekitten.com/240/120" class="advanced-side-article__thumb">
+                            <h3 class="advanced-side-article__title">
+                                朝はCSSに生き、昼はCSSに生き、夜はCSSに眠る。
+                            </h3>
+                            <div class="advanced-side-article__meta">
+                                <span>2019/1/18</span>
+                                <span>|</span>
+                                <span>CSSおじさん</span>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a href="" class="advanced-side-article__link">
+                        <article class="advanced-side-article">
+                            <img src="http://placekitten.com/200/286" class="advanced-side-article__thumb">
+                            <h3 class="advanced-side-article__title">
+                                まだCSSで消耗してるの？
+                            </h3>
+                            <div class="advanced-side-article__meta">
+                                <span>2019/1/17</span>
+                                <span>|</span>
+                                <span>CSSおじさん</span>
+                            </div>
+                        </article>
+                    </a>
+
+                    <a href="" class="advanced-side-article__link">
+                        <article class="advanced-side-article">
+                            <img src="http://placekitten.com/200/138" class="advanced-side-article__thumb">
+                            <h3 class="advanced-side-article__title">
+                                CSSでこんな間違いをしていませんか？
+                            </h3>
+                            <div class="advanced-side-article__meta">
+                                <span>2019/1/16</span>
+                                <span>|</span>
+                                <span>CSSおじさん</span>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </div>
+
+            <div class="advanced-side__section">
+                <h3 class="advanced-side__heading">人気のタグ</h3>
+                <ul class="advanced-tag">
+                    <li>CSS</li>
+                    <li>Flexbox</li>
+                    <li>CSS Grid</li>
+                    <li>z-index</li>
+                    <li>absolute</li>
+                </ul>
+            </div>
+        </aside>
+
+        <footer class="advanced-footer">
+            <div class="advanced-footer__copyright">
+                Copyright ©︎ CSSおじさん　All rights reserved.
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
