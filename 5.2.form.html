@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>フォーム</title>
+    <style>
+        .advanced {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* なんかこれがあるとはみ出る */
+            /* width: 100%; */
+            padding: 20px 15px;
+        }
+
+        .advanced__title {
+            margin: 0 0 20px;
+            text-align: center;
+        }
+
+        .advanced-form {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid black;
+        }
+
+        .advanced-form__item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 8px 0;
+        }
+
+        .advanced-form__item>:nth-child(odd) {
+            padding: 8px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .advanced-form__item>:nth-child(even) {
+            width: 100%;
+        }
+
+        .advanced-form__input-wrap {
+            position: relative;
+            display: inline-flex;
+            justify-content: flex-start;
+            border: 1px solid black;
+        }
+
+        .advanced-form__input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 32px;
+            padding: 0 8px;
+            border: 0;
+        }
+
+        .advanced-form__hidden {
+            clip: rect(1px, 1px, 1px, 1px);
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            position: absolute !important;
+            word-wrap: normal !important;
+        }
+
+        .advanced-form__radio-wrap:focus-within {
+            display: inline-block;
+            outline: auto 5px -webkit-focus-ring-color;
+        }
+
+        .advanced-form__radio-label {
+            position: relative;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .advanced-form__radio-label::before {
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin: 0 5px 0 0;
+            border: 1px solid black;
+            border-radius: 50%;
+            content: '';
+        }
+
+        .advanced-form__radio:checked+.advanced-form__radio-label::after {
+            position: absolute;
+            top: 7px;
+            left: 4px;
+            display: block;
+            width: 8px;
+            height: 8px;
+            content: '';
+            background-color: black;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+
+        .advanced-form__select-wrap {
+            position: relative;
+        }
+
+        .advanced-form__select-wrap::before {
+            position: absolute;
+            top: calc(50% - 4px);
+            right: 8px;
+            display: block;
+            width: 0;
+            height: 0;
+            content: '';
+            border-style: solid;
+            border-width: 8px 6px 0 6px;
+            border-color: black transparent transparent transparent;
+        }
+
+        .advanced-form__select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100%;
+            padding: 8px 30px 8px 8px;
+            background-color: #fff;
+            border: 1px solid black;
+            border-radius: 0;
+        }
+
+        .advanced-form__textarea-label {
+            align-self: flex-start;
+        }
+
+        .advanced-form__textarea {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 8px;
+            border: 1px solid black;
+            /* 縦方向にしかサイズ変更を許可しない */
+            resize: vertical;
+        }
+
+        .advanced-form__submit {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: block;
+            width: 120px;
+            height: 32px;
+            margin: 10px auto auto auto;
+            color: #fff;
+            text-align: center;
+            background-color: black;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="advanced">
+        <h3 class="advanced__title">お問い合わせ</h3>
+        <div class="advanced-form">
+            <div class="advanced-form__item">
+                <label for="name">名前</label>
+                <div class="advanced-form__input-wrap">
+                    <input id="name" type="text" class="advanced-form__input" placeholder="山田 太郎">
+                </div>
+            </div>
+
+            <div class="advanced-form__item">
+                <label for="email">メールアドレス</label>
+                <div class="advanced-form__input-wrap">
+                    <input id="email" type="email" class="advanced-form__input" placeholder="info@example.com">
+                </div>
+            </div>
+
+            <div class="advanced-form__item">
+                <div>
+                    <label for="sex-1">性別</label>
+                </div>
+                <div class="advanced-form__radio-wrap">
+                    <input id="sex-1" name="sex" type="radio" value="1" checked
+                        class="advanced-form__radio advanced-form__hidden">
+                    <label for="sex-1" class="advanced-form__radio-label">
+                        男性
+                    </label>
+
+                    <input id="sex-2" name="sex" type="radio" value="2"
+                        class="advanced-form__radio advanced-form__hidden">
+                    <label for="sex-2" class="advanced-form__radio-label">
+                        女性
+                    </label>
+
+                    <input id="sex-3" name="sex" type="radio" value="3"
+                        class="advanced-form__radio advanced-form__hidden">
+                    <label for="sex-3" class="advanced-form__radio-label">
+                        その他
+                    </label>
+                </div>
+            </div>
+
+            <div class="advanced-form__item">
+                <label for="type">お問い合わせ種別</label>
+                <div class="advanced-form__select-wrap">
+                    <select id="type" name="type" class="advanced-form__select">
+                        <option value="1">相談</option>
+                        <option value="2">見積もり</option>
+                        <option value="3">その他</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="advanced-form__item">
+                <label for="description" class="advanced-form__textarea-label">
+                    お問い合わせ内容
+                </label>
+                <textarea id="description" rows="3" class="advanced-form__textarea" placeholder="〇〇のお見積もりをお願いしたいです。">
+                </textarea>
+                <button type="submit" class="advanced-form__submit">
+                    送信
+                </button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
