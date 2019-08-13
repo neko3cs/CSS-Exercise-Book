@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>チェックボックス - ボックス全体のスタイル - </title>
+    <style>
+        .form__item {
+            padding: 15px 0;
+        }
+
+        .form__hidden {
+            width: 1px;
+            height: 1px;
+            clip: rect(1px, 1px, 1px, 1px);
+            overflow: hidden;
+            position: absolute !important;
+            word-wrap: normal !important;
+        }
+
+        .form__check-wrap {
+            display: inline-flex;
+            justify-content: flex-start;
+        }
+
+        .form__check-label {
+            position: relative;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .form__check-label::before {
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin: 0 5px 0 0;
+            border: 1px solid black;
+            content: '';
+        }
+
+        .form__check:checked+.form__check-label::after {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            display: block;
+            width: 4px;
+            height: 8px;
+            border: 2px solid black;
+            border-top: 0;
+            border-left: 0;
+            content: '';
+            transform: rotate(45deg);
+        }
+
+        .form__check--border+.form__check-label {
+            padding: 8px;
+            border: 1px solid black;
+            transition: 0.3s;
+        }
+
+        /* ラベル全体の背景色を切り替えてチェックマークを白色に変更することでスタイルを作る */
+        .form__check--border:checked+.form__check-label {
+            color: white;
+            background-color: black;
+        }
+
+        .form__check--border:checked+.form__check-label::before {
+            /* 内側の四角は隠しておくことで、背景色を違う色にしてもスタイル崩れを起こさない */
+            visibility: hidden;
+        }
+
+        .form__check--border:checked+.form__check-label::after {
+            top: 10px;
+            left: 13px;
+            width: 5px;
+            height: 10px;
+            border-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form__item">
+        <div class="form__check-wrap">
+            <input id="check-1" name="check" type="checkbox" value="1" checked
+                class="form__check form__check--border form__hidden">
+            <label for="check-1" class="form__check-label">value 1</label>
+            <input id="check-2" name="check" type="checkbox" value="2"
+                class="form__check form__check--border form__hidden">
+            <label for="check-2" class="form__check-label">value 2</label>
+        </div>
+    </div>
+</body>
+
+</html>
