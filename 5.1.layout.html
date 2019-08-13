@@ -168,6 +168,51 @@
             color: #999;
             text-align: center;
         }
+
+        /* PC版に対応させるには一度display: grid;から3カラムレイアウトを作って、あとから余白等の微調整を行う */
+        @media (min-width: 796px) {
+            .advanced {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                grid-template-rows: 60px minmax(300px, 1fr) 60px;
+                grid-row-gap: 30px;
+            }
+
+            .advanced-header {
+                grid-column: 1 / 3;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 0 15px;
+            }
+
+            .advanced-header__navigation {
+                margin: 0 0 0 10px;
+            }
+
+            .advanced-list {
+                align-items: flex-end;
+                height: 20px;
+                padding: 0;
+            }
+
+            .advanced-main {
+                padding: 0 15px;
+            }
+
+            .advanced-side {
+                padding: 0 15px;
+            }
+
+            .advanced-footer {
+                grid-column: 1 / 3;
+            }
+
+            .advanced-main__articles {
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -177,7 +222,7 @@
             <div class="advanced-header__title">
                 CSS実践問題集
             </div>
-            <nav class="advance-header__navigation">
+            <nav class="advanced-header__navigation">
                 <ul class="advanced-list">
                     <li>このサイトについて</li>
                     <li>お問い合わせ</li>
